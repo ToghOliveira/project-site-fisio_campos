@@ -1,0 +1,37 @@
+.menu-bar a{
+    text-transform: uppercase;
+    font-size: 22px;
+    color: rgb(141, 17, 17);
+    padding: 15px 10px 10px;
+    text-decoration: none;
+}
+
+.center-page article h1 {
+    text-transform: uppercase;
+    font-size: 20px;
+    color: #fff;
+}
+
+.center-page article h2 {
+    text-transform: uppercase;
+    font-size: 17px;
+    color: rgb(255, 255, 255);
+    font-family: sans-serif;
+}
+
+.center-page article p {
+    background: rgba(253, 253, 253, 0.4);
+    color: rgb(0, 0, 0);
+    font-family: sans-serif;
+}
+
+.address-person {
+    text-transform: uppercase;
+    font-size: 14px;
+    color: rgb(141, 17, 17);
+    text-decoration: none;
+}
+
+.contact-person {
+    color: rgb(37, 37, 37);
+}
