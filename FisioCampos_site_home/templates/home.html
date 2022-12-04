@@ -14,16 +14,15 @@
             --width-bar: 11rem;
             --margin-bar: 3rem;
             --padding-navbar: 1rem;
-            --background-nav: #F5EFE6;
-            --hover-color: #E8DFCA;
-            --font-color: #161616;
+            --background-nav: #457EAa;
+            --hover-color: #5895B2;
+            --font-color: #fff;
 
             /*MAIN*/
             --width-main: 100vw;
             --height-main: 45vw;
-            --background-main-one: #7895B2;
-            --background-main-two: #F5EFE6;
-            --font-color-main: #AEBDCA;
+            --background-main-one: #CFD2CF;
+            --font-color-main: #1C3879;
         }
 
         html {
@@ -64,7 +63,7 @@
             width: 80vw;
             display: flex;
             list-style: none;
-            position: ;
+            position: static;
         }
 
         .dp_menu ul li {
@@ -73,9 +72,11 @@
             transition: background .3s;
         }
 
-        .dp_menu ul li:hover {
+        .dp_menu ul li a:hover {
+            padding: var(--padding-navbar);
             background: var(--hover-color);
             border-radius: 1rem;
+            transition: all .2s;
         }
 
         .dp_menu ul li a {
@@ -93,15 +94,15 @@
 
         .dp_menu ul li:hover ul {
             display: block;
+            height: auto;
             position: absolute;
             top: 3.8rem;
-            left: 0;
+            left: 1rem;
             background: var(--background-nav);
             border-radius: 0.8rem;
-            transition: background .4s;
         }
 
-        .menu-icon label {
+        .dp_menu label {
             position: absolute;
             top: 1.5rem;
             right: 2rem;
@@ -110,45 +111,53 @@
             display: none;
         }
 
-        .menu-icon input {
+        .dp_menu input {
             display: none;
         }
 
 
         @media (max-width: 730px) {
-            .menu-icon label {
+            .dp_menu label {
                 display: block;
-            }
-
-            .dp_menu {
-                position: fixed;
-                width: 100%;
-                height: 100vh;
-                left: 0;
-                top: 5rem;
-                background: var(--hover-color);
             }
 
             .dp_menu ul {
-                left: 40%;
-                display: list-item;
-            }
-
-            .dp_menu ul li {
-                width: 100vw;
                 display: block;
+                position: fixed;
+                top: 5rem;
+                left: -200%;
+
+                width: 100%;
+                height: 100vh;
+                padding: 6rem 33.3%;
+
+                background: var(--hover-color);
+                transition: all 0.5s;
             }
 
             .dp_menu ul li a:hover {
+                padding: 6px;
+
                 background: var(--background-nav);
-                padding: 0.4rem;
-                border-radius: 0.4rem;
+
+                border-radius: 6px;
+                transition: all 0.8s;
+            }
+
+            .dp_menu ul ul {
+                padding: 0;
             }
 
             .dp_menu ul li:hover ul {
                 display: block;
                 position: static;
                 background: var(--hover-color);
+                height: auto;
+
+            }
+
+            .dp_menu input:checked~ul {
+                left: 0;
             }
 
 
@@ -166,7 +175,7 @@
         }
 
         .home-page h1 {
-            position: absolute;
+            position: static;
             top: 10rem;
             left: 35%;
             font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -177,7 +186,7 @@
         .specialties-page {
             width: var(--width-main);
             height: var(--height-main);
-            background: var(--background-main-two);
+            background: var(--background-main-one);
         }
     </style>
 </head>
@@ -189,7 +198,11 @@
                 <img class="navbar_logo" src="https://img.icons8.com/windows/32/null/fedex.png">
             </div>
             <div class="dp_menu">
-                <ul>
+                <input type="checkbox" id="checkbtn">
+                <label for="checkbtn">
+                    <i class="gg-menu"></i>
+                </label>
+                <ul class="dp_main_menu">
                     <li><a href="#">Home</a></li>
                     <li><a href="#">Especialidades</a>
                         <ul>
@@ -211,12 +224,6 @@
                     <li><a hre f="#">Quem Somos</a></li>
                 </ul>
             </div>
-            <div class="menu-icon">
-                <input type="checkbox" id="checkbtn">
-                <label for="checkbtn">
-                    <i class="gg-menu"></i>
-                </label>
-            </div>
         </nav>
     </header>
     <main class="main">
@@ -227,7 +234,7 @@
             </h1>
         </section>
         <section class="specialties-page">
-            <p>safcnbasijkcas</p>
+
         </section>
     </main>
 </body>
